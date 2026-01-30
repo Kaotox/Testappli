@@ -1,0 +1,33 @@
+<div class="card">
+    <h2>Ajouter un utilisateur</h2>
+    <form id="form-add-user">
+        
+        <label>Nom :</label>
+        <input type="text" id="input-nom" placeholder="Ex: Jean Dupont" required>
+        
+        <label>Rôle :</label>
+        <select id="input-job">
+            <option value="Dev">Développeur</option>
+            <option value="Manager">Manager</option>
+            <option value="Stagiaire">Stagiaire</option>
+        </select>
+
+        <label>Email :</label>
+        <input type="email" id="input-email" placeholder="jean@mail.com">
+
+        <label>Âge :</label>
+        <input type="number" id="input-age" placeholder="25" style="width: 60px;">
+
+        <label>Poids (kg) :</label> 
+        <input type="number" id="input-poids" placeholder="80" style="width: 60px;">
+
+        <label>Taille (cm) :</label>
+        <input type="number" id="input-taille" placeholder="180" style="width: 60px;">
+
+        <label>Niveau sport (1 à 2) :</label>
+        <input type="number" id="input-niveausport" placeholder="1.2" step="0.1" min="1" max="2" style="width: 60px;">
+
+        <button type="submit">Sauvegarder</button>
+    </form>
+    <p id="status"></p>
+</div>

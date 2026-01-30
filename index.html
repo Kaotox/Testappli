@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon App Electron</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="brand">MonApp</div>
+        <div class="menu-items">
+            <button id="btn-accueil">Accueil</button>
+            <button id="btn-bancaire">Compte bancaire</button>
+            <button id="btn-params">Paramètres</button>
+        </div>
+    </nav>
+
+    <div id="contenu-principal">
+        <div id="app">
+    <label for="profile-select">Choisissez votre profil :</label>
+    
+    <select id="profile-select">
+        <option value="">-- Qui êtes-vous ? --</option>
+    </select>
+
+    <h2 id="greeting">Bonjour Inconnu</h2>
+</div>
+        </div>
+
+    <footer>
+        <div class="footer-columns">
+            
+            <div class="col">
+                <h3>Pour mieux nous connaître</h3>
+                <ul>
+                    <li><a href="#">À propos de nous</a></li>
+                    <li><a href="#">Carrières</a></li>
+                    <li><a href="#">Presse</a></li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3>Gagnez de l'argent</h3>
+                <ul>
+                    <li><a href="#">Vendez sur MonApp</a></li>
+                    <li><a href="#">Devenir partenaire</a></li>
+                    <li><a href="#">Expédié par MonApp</a></li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3>Besoin d'aide ?</h3>
+                <ul>
+                    <li><a href="#">Voir vos commandes</a></li>
+                    <li><a href="#">Tarifs et options</a></li>
+                    <li><a href="#">Service Client</a></li>
+                </ul>
+            </div>
+
+        </div>
+        
+        <div class="copyright">
+            © 2024 MonApp Inc. Tous droits réservés.
+        </div>
+    </footer>
+
+    <script src="./renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+/* --- PARTIE 1 : LA STRUCTURE "ÉLASTIQUE" --- */
+
+html, body {
+    height: 100%; /* Important pour que la page prenne tout l'écran */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;          /* On active le mode Flexbox */
+    flex-direction: column; /* On empile les éléments verticalement */
+}
+
+#contenu-principal {
+    flex: 1; /* LA MAGIE : Cette zone prend tout l'espace vide disponible */
+    padding: 40px;
+    background-color: #f3f3f3; /* Gris très clair pour le fond de page */
+}
+
+/* --- PARTIE 2 : LE DESIGN DU MENU DU HAUT --- */
+nav {
+    background-color: #131921; /* Noir Amazon */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav button {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+
+nav button:hover {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-left: 10px;
+    transition: 0.5s;
+    background-color: #3a4553;
+}
+
+/* --- PARTIE 3 : LE DESIGN DU FOOTER (STYLE AMAZON) --- */
+
+footer {
+    background-color: #232f3e; /* Bleu nuit Amazon */
+    color: white;
+    padding-top: 40px; /* Espace en haut du footer */
+}
+
+/* Conteneur des colonnes */
+.footer-columns {
+    display: flex;           /* Aligner les colonnes côte à côte */
+    justify-content: space-around; /* Espacer les colonnes équitablement */
+    max-width: 1000px;       /* Limiter la largeur pour que ce soit joli */
+    margin: 0 auto;          /* Centrer le bloc au milieu */
+    padding-bottom: 40px;
+}
+
+/* Style des titres de colonnes */
+.col h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+/* Style de la liste (retirer les puces rondes) */
+.col ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+/* Style des liens */
+.col ul li a {
+    text-decoration: none; /* Pas de soulignement */
+    color: #dddddd;        /* Gris clair */
+    font-size: 14px;
+    line-height: 2;        /* Espace entre les lignes */
+}
+
+.col ul li a:hover {
+    text-decoration: underline; /* Souligner au survol souris */
+    color: #ffffff;
+}
+
+/* La barre de copyright tout en bas */
+.copyright {
+    background-color: #131921; /* Plus foncé que le footer */
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #3a4553;
+}
+
+/* --- DESIGN DES PARAMÈTRES ET FORMULAIRES --- */
+
+.settings-header {
+    margin-bottom: 30px;
+}
+
+.settings-header h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+/* Grille pour aligner les cartes si tu en as plusieurs */
+.settings-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* LE STYLE "CARTE" (Important !) */
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Ombre douce */
+    padding: 30px;
+    width: 100%;
+    max-width: 400px; /* On limite la largeur pour faire joli */
+    border: 1px solid #eee;
+}
+
+.card-header h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 18px;
+    border-bottom: 2px solid #f0f2f5;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+/* Les groupes d'inputs */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 13px;
+    color: #7f8c8d;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%; /* Prend toute la largeur de la carte */
+    padding: 12px;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+    box-sizing: border-box; /* Important pour les padding */
+}
+
+/* Effet quand on clique dans l'input */
+.form-group input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Ajoute ça si tu ne l'as plus, sinon supprime juste le code Netflix */
+.btn-primary {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.btn-primary:hover {
+    background-color: #34495e;
+}
+
+

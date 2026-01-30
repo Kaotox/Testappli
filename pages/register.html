@@ -1,0 +1,30 @@
+<div class="settings-header">
+    <h1>Administration</h1>
+    <p>Gérez les accès et les utilisateurs de l'application.</p>
+</div>
+
+<div class="settings-grid">
+    
+    <div class="card form-card">
+        <div class="card-header">
+            <h3>✨ Nouvel Utilisateur</h3>
+        </div>
+        
+        <form id="form-add-user">
+            <div class="form-group">
+                <label for="input-nom">Nom complet</label>
+                <input type="text" id="input-nom" placeholder="Ex: Jean Dupont" required>
+            </div>
+
+            <div class="form-group">
+                <label for="input-job">Rôle / Métier</label>
+                <input type="text" id="input-job" placeholder="Ex: Manager" required>
+                </div>
+
+            <button type="submit" class="btn-primary">Ajouter l'utilisateur</button>
+        </form>
+        
+        <p id="status" class="status-msg"></p>
+    </div>
+
+    </div>
