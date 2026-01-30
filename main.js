@@ -16,7 +16,9 @@ const createTableQuery = `
         age INTEGER,
         poids INTEGER,
         taille INTEGER,
-        niveausport FLOAT
+        niveausport FLOAT,
+        sexe TEXT,
+        objectif TEXT
     );
 `;
 db.exec(createTableQuery);
@@ -65,14 +67,17 @@ function createWindow () {
 // SAUVEGARDER UN UTILISATEUR
 ipcMain.handle('save-user', async (event, data) => {
     try {
-        // On ajoute email et age dans la requête SQL
-        const insertStmt = db.prepare('INSERT INTO utilisateurs (nom, role, email, age, poids, taille, niveausport) VALUES (?, ?, ?, ?, ?, ?, ?)');
+        // On ajoute les ? pour sexe et objectif (total 9 champs maintenant)
+        const insertStmt = db.prepare('INSERT INTO utilisateurs (nom, role, email, age, poids, taille, niveausport, sexe, objectif) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
         
-        // On passe les 4 valeurs au lieu de 2
-        // data.email et data.age viendront de ton formulaire HTML/JS côté client
-        const info = insertStmt.run(data.nom, data.role, data.email, data.age, data.poids, data.taille, data.niveausport);
+        // On passe les nouvelles données
+        insertStmt.run(
+            data.nom, data.role, data.email, data.age, 
+            data.poids, data.taille, data.niveausport,
+            data.sexe, data.objectif // NOUVEAU
+        );
         
-        return { success: true, message: "Sauvegardé avec les nouveaux critères !" };
+        return { success: true, message: "Profil nutritionnel complet sauvegardé !" };
     } catch (error) {
         console.error(error);
         return { success: false, message: error.message };

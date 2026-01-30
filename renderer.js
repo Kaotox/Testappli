@@ -36,7 +36,9 @@ async function chargerVue(fichier) {
                         age: document.getElementById('input-age').value,
                         poids: document.getElementById('input-poids').value,
                         taille: document.getElementById('input-taille').value,
-                        niveausport: document.getElementById('input-niveausport').value
+                        niveausport: document.getElementById('input-niveausport').value,
+                        sexe: document.getElementById('input-sexe').value,
+                        objectif: document.getElementById('input-objectif').value
                     };
 
                     const resultat = await window.monSysteme.sauvegarderUtilisateur(donnees);
