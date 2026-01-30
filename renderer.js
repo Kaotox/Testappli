@@ -18,12 +18,12 @@ async function chargerVue(fichier) {
         // --- LOGIQUE SPÉCIFIQUE AUX PAGES ---
 
         // 1. PAGE D'ACCUEIL
-        if (fichier === 'accueil.html') {
+        if (fichier.includes('accueil.html')) {
             afficherUtilisateurs();
         }
 
         // 2. PAGE PARAMÈTRES
-        if (fichier === 'parametres.html') {
+        if (fichier.includes('parametres.html')) {
             const form = document.getElementById('form-add-user');
             if (form) {
                 form.addEventListener('submit', async (e) => {
@@ -57,7 +57,7 @@ async function chargerVue(fichier) {
         }
 
         // 3. PAGE DE CONNEXION (C'est ici qu'on s'amuse !)
-        if (fichier === 'login.html') {
+        if (fichier.includes('login.html')) {
             const btnLogin = document.getElementById('btn-login-action');
             const inputMdp = document.getElementById('login-mdp');
             const inputId = document.getElementById('login-id');
@@ -183,9 +183,9 @@ function configurerInterfaceSelonRole() {
 }
 
 // --- 3. GESTIONNAIRES D'ÉVÉNEMENTS ---
-document.getElementById('btn-accueil').addEventListener('click', () => chargerVue('accueil.html'));
-document.getElementById('btn-params').addEventListener('click', () => chargerVue('parametres.html'));
-document.getElementById('btn-bancaire').addEventListener('click', () => chargerVue('banque.html'));
+document.getElementById('btn-accueil').addEventListener('click', () => chargerVue('pages/accueil.html'));
+document.getElementById('btn-params').addEventListener('click', () => chargerVue('pages/parametres.html'));
+document.getElementById('btn-bancaire').addEventListener('click', () => chargerVue('pages/banque.html'));
 
 zoneContenu.addEventListener('click', async (event) => {
     if (event.target.dataset.target) {
@@ -204,4 +204,4 @@ document.body.addEventListener('click', async (event) => {
 
 // --- 4. DÉMARRAGE ---
 // On lance l'application sur la page de login
-chargerVue('login.html');
+chargerVue('pages/login.html');
