@@ -1,0 +1,64 @@
+<div class="card" style="height: 90vh; display: flex; flex-direction: column; padding: 20px; background: #f4f6f7;">
+    
+    <div style="margin-bottom: 20px; background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <h2 style="margin: 0; color: #2c3e50;">📅 Planning de :</h2>
+                <select id="planning-select-user" style="padding: 8px; border-radius: 5px; border: 2px solid #3498db; font-weight: bold; font-size: 1em;">
+                    <option value="">Chargement...</option>
+                </select>
+            </div>
+            <button class="btn-interne" data-target="pages/accueil.html">⬅ Retour Accueil</button>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+            <span style="font-weight: bold; color: #7f8c8d;">Générer pour :</span>
+            
+            <div id="check-jours" style="display: flex; gap: 10px;">
+                </div>
+
+            <button id="btn-generate-planning" style="background: #8e44ad; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold;">
+                🎲 Générer Aléatoire
+            </button>
+            
+            <button id="btn-generate-courses" style="background: #27ae60; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; margin-left: auto;">
+                📝 Liste de Courses
+            </button>
+        </div>
+    </div>
+
+    <div id="planning-container" style="flex: 1; overflow-x: auto; display: flex; gap: 15px; padding-bottom: 10px;">
+        </div>
+
+</div>
+
+<div id="modal-select-planning" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; justify-content: center; align-items: center;">
+    <div style="background: white; width: 500px; max-height: 80%; padding: 20px; border-radius: 10px; display: flex; flex-direction: column;">
+        
+        <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+            <h3 style="margin: 0;">Choisir un plat</h3>
+            <button onclick="document.getElementById('modal-select-planning').style.display='none'" style="border:none; background:transparent; font-size:1.5em; cursor:pointer;">✕</button>
+        </div>
+
+        <input type="text" id="input-search-planning" placeholder="🔍 Chercher (ex: Poulet, Pâtes...)" style="padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px;">
+        
+        <div id="results-planning-select" style="flex: 1; overflow-y: auto; border: 1px solid #eee; border-radius: 5px;">
+            </div>
+    </div>
+</div>
+
+<div id="modal-courses" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 10000; justify-content: center; align-items: center;">
+    <div style="background: white; width: 90%; max-width: 600px; height: 80vh; padding: 25px; border-radius: 15px; display: flex; flex-direction: column;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+            <h2 style="margin: 0;">🛒 Ma Liste de Courses</h2>
+            <button onclick="document.getElementById('modal-courses').style.display='none'" style="border:none; background:transparent; font-size:1.5em; cursor:pointer;">✕</button>
+        </div>
+        
+        <div id="container-liste-courses" style="flex: 1; overflow-y: auto;">
+            </div>
+
+        <div style="margin-top: 15px; text-align: center;">
+            <button onclick="window.print()" style="background: #34495e; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">🖨️ Imprimer / PDF</button>
+        </div>
+    </div>
+</div>

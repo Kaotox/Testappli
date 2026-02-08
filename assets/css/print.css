@@ -1,0 +1,89 @@
+/* --- CONFIGURATION D'IMPRESSION (Optimisé A4 Paysage) --- */
+@media print {
+    
+    /* 1. Format Paysage & Marges minimales */
+    @page {
+        size: landscape;
+        margin: 5mm; /* Marges très fines pour gagner de la place */
+    }
+
+    /* 2. On cache l'interface inutile */
+    nav, button, input, select, .modal-close, #check-jours, 
+    #planning-select-user, .dash-header, .btn-mini-action, #btn-print-added {
+        display: none !important;
+    }
+
+    /* 3. Réduction globale pour tout faire rentrer */
+    body {
+        background: white !important;
+        font-size: 10pt; /* Texte plus petit */
+        -webkit-print-color-adjust: exact; /* Force l'impression des couleurs de fond */
+    }
+
+    /* Conteneur principal */
+    #contenu-principal, .dash-container {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* --- LE PLANNING (PAGE 1) --- */
+    #planning-container {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important; /* 4 colonnes */
+        grid-template-rows: auto auto !important; /* 2 lignes */
+        gap: 8px !important; /* Espacement réduit */
+        width: 100% !important;
+        
+        /* ASTUCE : On dézoome légèrement le planning pour qu'il tienne en hauteur */
+        zoom: 0.85; 
+    }
+
+    /* Les colonnes des jours */
+    #planning-container > div {
+        border: 1px solid #333 !important;
+        min-width: 0 !important;
+        page-break-inside: avoid; /* Interdit de couper un jour en deux */
+        height: fit-content !important;
+    }
+
+    /* En-tête du jour (Lundi, Mardi...) */
+    #planning-container > div > div:first-child {
+        background: #ddd !important; /* Gris clair pour l'impression */
+        color: black !important;
+        padding: 5px !important;
+        font-size: 1.1em !important;
+        border-bottom: 1px solid #333 !important;
+    }
+
+    /* Les cartes repas à l'intérieur */
+    #planning-container .card, 
+    #planning-container > div > div:not(:first-child) {
+        border: none !important;
+        border-bottom: 1px solid #ccc !important;
+        padding: 4px !important; /* Padding réduit */
+        margin: 0 !important;
+        box-shadow: none !important;
+    }
+
+    /* --- LA LISTE DE COURSES (PAGE 2) --- */
+    #modal-courses {
+        display: block !important;
+        position: relative !important;
+        break-before: page; /* Force une NOUVELLE PAGE */
+        page-break-before: always;
+        border: none !important;
+        padding-top: 20px !important;
+    }
+
+    #modal-courses h2 {
+        border-bottom: 2px solid black;
+        text-align: center;
+    }
+
+    #container-liste-courses {
+        column-count: 4; /* 4 colonnes pour la liste (plus compact) */
+        column-gap: 20px;
+        font-size: 9pt;
+    }
+}

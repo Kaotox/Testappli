@@ -1,0 +1,141 @@
+<div class="card">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2 id="profil-nom">Chargement du profil...</h2>
+        <button class="btn-interne" data-target="pages/accueil.html" style="padding: 5px 10px; cursor: pointer;">⬅ Retour</button>
+    </div>
+
+    <div style="display: flex; gap: 20px; margin-bottom: 30px; margin-top: 20px;">
+        
+        <div style="flex: 1; background: #e3f2fd; padding: 15px; border-radius: 10px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            <h3 style="margin-top: 0; color: #2c3e50;">Objectif Journalier</h3>
+            <h1 id="val-calories" style="color: #2980b9; margin: 5px 0; font-size: 2.5em;">0 Kcal</h1>
+            <div style="margin-top: 10px;">
+                <label style="font-size: 0.8em; color: #546e7a;">Niveau d'activité :</label>
+                <select id="select-sport" style="width: 100%; padding: 5px; margin-top: 5px; border-radius: 4px; border: 1px solid #90caf9; background: white;">
+                    <option value="1.2">Sédentaire (Bureau, peu d'exercice)</option>
+                    <option value="1.375">Léger (Sport 1-3 fois/semaine)</option>
+                    <option value="1.55">Modéré (Sport 3-5 fois/semaine)</option>
+                    <option value="1.725">Intense (Sport 6-7 fois/semaine)</option>
+                    <option value="1.9">Athlète (Entraînement bi-quotidien)</option>
+                </select>
+            </div>
+            <small id="val-objectif" style="display:block; margin-top:5px; color: #7f8c8d; font-weight: bold;">Base (TDEE) : ...</small>
+        </div>
+        
+        <div style="flex: 1; background: #fff; border: 1px solid #eee; padding: 15px; border-radius: 10px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            <h3 style="margin-top: 0; color: #2c3e50;">IMC Actuel</h3>
+            <h1 id="val-imc" style="color: #2c3e50; margin: 5px 0; font-size: 2.5em;">00.0</h1>
+            
+            <div style="display: flex; gap: 5px; margin-top: 15px;">
+                <div id="box-maigreur" style="flex: 1; padding: 8px 2px; background: #3498db; color: white; border-radius: 5px; font-size: 0.75em; opacity: 0.3;">
+                    <strong>Maigreur</strong><br>< 18.5
+                </div>
+                <div id="box-normal" style="flex: 1; padding: 8px 2px; background: #27ae60; color: white; border-radius: 5px; font-size: 0.75em; opacity: 0.3;">
+                    <strong>Normal</strong><br>18.5 - 25
+                </div>
+                <div id="box-surpoids" style="flex: 1; padding: 8px 2px; background: #f39c12; color: white; border-radius: 5px; font-size: 0.75em; opacity: 0.3;">
+                    <strong>Surpoids</strong><br>25 - 30
+                </div>
+                <div id="box-obesite" style="flex: 1; padding: 8px 2px; background: #c0392b; color: white; border-radius: 5px; font-size: 0.75em; opacity: 0.3;">
+                    <strong>Obésité</strong><br>> 30
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 style="border-bottom: 2px solid #eee; padding-bottom: 10px;">🎨 Stratégie Nutritionnelle</h3>
+    
+    <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; border: 1px solid #ddd;">
+        
+        <div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #bdc3c7; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+            <label style="font-size: 1.2em; display: block; margin-bottom: 15px;">
+                🔥 <strong>Ajustement Calorique :</strong> <span id="lbl-deficit" style="font-weight: bold; color: #8e44ad;">0 Kcal</span>
+            </label>
+            <input type="range" id="range-deficit" min="-1000" max="1000" step="50" value="0" style="width: 100%; cursor: pointer;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.85em; color: #95a5a6; margin-top: 8px; font-weight: 500;">
+                <span id="label-min">Max Perte</span>
+                <span>Maintien (0)</span>
+                <span id="label-max">Max Prise</span>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <label style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                <span>🍗 Protéines (Construction)</span>
+                <span><span id="lbl-prot-g" style="font-weight: bold; color: #3498db;">0g</span> <small style="color:#7f8c8d">(<span id="lbl-prot-ratio">1.8</span>g/kg)</small></span>
+            </label>
+            <input type="range" id="range-prot" min="1.2" max="2.5" step="0.1" value="1.8" style="width: 100%; cursor: pointer;">
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <label style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                <span>🥑 Lipides (Santé/Hormones)</span>
+                <span><span id="lbl-lip-g" style="font-weight: bold; color: #e74c3c;">0g</span> <small style="color:#7f8c8d">(<span id="lbl-lip-ratio">1.0</span>g/kg)</small></span>
+            </label>
+            <input type="range" id="range-lip" min="0.5" max="1.5" step="0.1" value="1.0" style="width: 100%; cursor: pointer;">
+        </div>
+
+        <div style="margin-top: 25px; padding: 15px; background: #e8f5e9; border-radius: 8px; color: #27ae60; border: 1px solid #c8e6c9; text-align: center;">
+            <span style="font-size: 1.5em;">🍚</span> 
+            <strong style="font-size: 1.1em; margin-left: 10px;">Glucides (Énergie restante) :</strong> 
+            <span id="lbl-glu-g" style="font-size: 1.4em; font-weight: bold; margin-left: 10px;">0g</span>
+        </div>
+        
+        <p id="alert-glucides" style="color: #c0392b; display: none; font-weight: bold; text-align: center; background: #fadbd8; padding: 10px; border-radius: 5px; margin-top: 10px;">
+            ⚠️ Attention : Le taux de glucides est dangereusement bas (< 50g) !
+        </p>
+
+        <div style="margin-top: 30px; border-top: 2px dashed #ddd; padding-top: 20px;">
+            <h3 style="color: #2c3e50;">🍽️ Structure de la Journée</h3>
+            <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: bold; color: #2980b9;">Total attribué :</span>
+                <span id="total-pourcentage" style="font-weight: bold; font-size: 1.2em;">0%</span>
+            </div>
+            <div id="container-repas-liste"></div>
+            <div style="display: flex; gap: 10px; margin-top: 15px;">
+                <input type="text" id="new-repas-name" placeholder="Nom (ex: Post-Workout)" style="flex: 1;">
+                <button id="btn-add-repas" class="btn-interne" style="background: #3498db;">➕ Ajouter</button>
+            </div>
+        </div>
+
+        <button id="btn-save-nutrition" class="btn-primary" style="margin-top: 30px; width: 100%; padding: 15px; font-size: 1.1em; font-weight: bold; cursor: pointer;">
+            💾 Enregistrer les modifications
+        </button>
+    </div>
+</div>
+
+<div id="modal-cuisine" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(5px);">
+    <div style="background: white; width: 90%; max-width: 500px; padding: 25px; border-radius: 15px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        
+        <button id="close-modal" style="position: absolute; top: 15px; right: 15px; border: none; background: #eee; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-weight: bold;">✕</button>
+        
+        <h2 style="color: #2c3e50; margin-top: 0; text-align: center;">👨‍🍳 Chef Virtuel</h2>
+        
+        <div id="header-score-repas" style="background: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 20px; font-size: 0.9em;">
+            <div style="text-align: center; margin-bottom: 10px; color: #7f8c8d;">Objectif pour ce repas :</div>
+            <div style="display: flex; justify-content: space-around; font-weight: bold;">
+                <span style="color: #3498db;">Prot: <span id="cible-prot">--</span>g</span>
+                <span style="color: #e67e22;">Glu: <span id="cible-glu">--</span>g</span>
+                <span style="color: #e74c3c;">Lip: <span id="cible-lip">--</span>g</span>
+            </div>
+            <div style="text-align: center; margin-top: 5px; color: #2980b9; font-weight: bold; font-size: 1.2em;">
+                <span id="cible-kcal">--</span> Kcal
+            </div>
+        </div>
+
+        <label style="font-weight: bold; display: block; margin-bottom: 8px;">Quelle recette veux-tu adapter ?</label>
+        <select id="select-recette-modal" style="width: 100%; padding: 12px; margin-bottom: 20px; font-size: 1.1em; border: 2px solid #3498db; border-radius: 8px;">
+            <option value="">-- Choisir un plat --</option>
+        </select>
+
+        <div id="zone-ingredients-calcules" style="display: none; border: 1px dashed #ccc; padding: 15px; border-radius: 10px; background: #fff;">
+            <h3 style="margin-top: 0; font-size: 1.1em;">🛒 Ta liste sur-mesure :</h3>
+            <ul id="liste-ingredients-finale" style="padding-left: 20px; line-height: 1.8; color: #2c3e50;"></ul>
+            
+            <div style="margin-top: 15px; padding-top:10px; border-top: 1px solid #eee; text-align: center; font-size: 0.9em; color: #27ae60;">
+                <span id="analyse-resultat">✅ 98% des macros respectés</span>
+            </div>
+        </div>
+
+    </div>
+</div>

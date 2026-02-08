@@ -1,0 +1,61 @@
+<div class="card" style="height: 90vh; display: flex; flex-direction: column; padding: 20px;">
+    
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <h2 style="margin: 0; color: #2c3e50;">🔪 Atelier Cuisinier</h2>
+        <button class="btn-interne" data-target="pages/accueil.html">⬅ Retour Accueil</button>
+    </div>
+
+    <div style="display: flex; gap: 20px; flex: 1; overflow: hidden;">
+        
+        <div style="width: 30%; background: #f8f9fa; border-radius: 10px; padding: 15px; display: flex; flex-direction: column; border: 1px solid #ddd;">
+            <button id="btn-new-recette" class="btn-primary" style="margin-bottom: 15px;">➕ Nouvelle Recette</button>
+            <div id="liste-recettes-sidebar" style="overflow-y: auto; flex: 1;">
+                </div>
+        </div>
+
+        <div id="zone-editeur" style="flex: 1; background: white; border-radius: 10px; border: 1px solid #ddd; padding: 20px; display: flex; flex-direction: column; overflow-y: auto;">
+            
+            <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                <div style="flex: 1;">
+                    <label>Nom du plat</label>
+                    <input type="text" id="edit-nom" placeholder="Ex: Gratin de Courgettes" style="font-weight: bold; font-size: 1.1em;">
+                </div>
+                <div style="width: 150px; text-align: right;">
+                    <button id="btn-save-recette" style="background: #27ae60; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; height: 100%; font-weight: bold;">💾 Sauver</button>
+                </div>
+            </div>
+
+            <label>Instructions (Optionnel)</label>
+            <textarea id="edit-instructions" rows="2" style="width: 100%; border: 1px solid #ddd; border-radius: 5px; padding: 8px; margin-bottom: 20px;" placeholder="Cuire au four 20min..."></textarea>
+
+            <hr style="border: 0; border-top: 1px dashed #ccc; margin-bottom: 20px;">
+
+            <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                <h4 style="margin-top: 0; color: #2980b9;">🔍 Ajouter un ingrédient</h4>
+                
+                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                    <input type="text" id="search-ing-text" placeholder="Nom (ex: riz)" style="flex: 2;">
+                    
+                    <select id="search-ing-cat" style="flex: 1; max-width: 150px;">
+                        <option value="">Toutes catégories</option>
+                        </select>
+
+                    <select id="search-ing-sort" style="flex: 1; max-width: 120px;">
+                        <option value="nom">A-Z</option>
+                        <option value="prot_desc">Protéines (+)</option>
+                        <option value="cal_asc">Calories (-)</option>
+                        <option value="cal_desc">Calories (+)</option>
+                    </select>
+                </div>
+
+                <div id="results-ingredients" style="max-height: 150px; overflow-y: auto; background: white; border: 1px solid #ddd; border-radius: 5px; display: none;"></div>
+            </div>
+
+            <h4 style="margin-bottom: 10px;">🥘 Ingrédients de la recette (Base pour 1 personne)</h4>
+            <div id="liste-ingredients-ajoutes">
+                <p style="color: #999; font-style: italic;">Aucun ingrédient pour l'instant.</p>
+            </div>
+
+        </div>
+    </div>
+</div>

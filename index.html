@@ -2,69 +2,38 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Mon App Electron</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Nutrition Coach</title>
+
     <link rel="stylesheet" href="./assets/css/style.css">
+    
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
+
+    <link rel="stylesheet" href="./assets/css/print.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-    <nav>
-        <div class="brand">MonApp</div>
-        <div class="menu-items">
-            <button id="btn-accueil">Accueil</button>
-            <button id="btn-bancaire">Compte bancaire</button>
-            <button id="btn-params">Paramètres</button>
-        </div>
+    <nav style="display: none;">
+        <button id="btn-accueil" data-target="pages/accueil.html">🏠 Accueil</button>
+        
+        <button id="btn-dashboard" data-target="pages/dashboard.html" style="background: #34495e;">📊 Tableau de Bord</button>
+        
+        <button id="btn-params" data-target="pages/parametres.html">⚙️ Nouvel Adhérent</button>
+        <button id="btn-graphique" data-target="pages/graphique.html">📈 Suivi Poids</button>
+        <button id="btn-recettes" data-target="pages/recettes.html" style="background: #8e44ad;">🔪 Atelier</button>
+        <button id="btn-aliments" data-target="pages/aliments.html" style="background: #e67e22;">🥦 Aliments</button>
+        <button id="btn-planning" data-target="pages/planning.html" style="background: #2980b9;">📅 Planning</button>
+        
+        <button id="btn-dark-mode" style="margin-left: auto; background: transparent; font-size: 1.2em;">🌙</button>
     </nav>
 
     <div id="contenu-principal">
-        <div id="app">
-    <label for="profile-select">Choisissez votre profil :</label>
-    
-    <select id="profile-select">
-        <option value="">-- Qui êtes-vous ? --</option>
-    </select>
-
-    <h2 id="greeting">Bonjour Inconnu</h2>
-</div>
         </div>
 
-    <footer>
-        <div class="footer-columns">
-            
-            <div class="col">
-                <h3>Pour mieux nous connaître</h3>
-                <ul>
-                    <li><a href="#">À propos de nous</a></li>
-                    <li><a href="#">Carrières</a></li>
-                    <li><a href="#">Presse</a></li>
-                </ul>
-            </div>
-
-            <div class="col">
-                <h3>Gagnez de l'argent</h3>
-                <ul>
-                    <li><a href="#">Vendez sur MonApp</a></li>
-                    <li><a href="#">Devenir partenaire</a></li>
-                    <li><a href="#">Expédié par MonApp</a></li>
-                </ul>
-            </div>
-
-            <div class="col">
-                <h3>Besoin d'aide ?</h3>
-                <ul>
-                    <li><a href="#">Voir vos commandes</a></li>
-                    <li><a href="#">Tarifs et options</a></li>
-                    <li><a href="#">Service Client</a></li>
-                </ul>
-            </div>
-
-        </div>
-        
-        <div class="copyright">
-            © 2024 MonApp Inc. Tous droits réservés.
-        </div>
-    </footer>
-
-    <script src="./renderer.js"></script>
+    <script src="renderer.js"></script>
 </body>
 </html>

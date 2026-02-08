@@ -1,0 +1,67 @@
+<div class="dash-container">
+    
+    <header class="dash-header">
+        <div class="header-text">
+            <h1>Bonjour, <span id="dash-nom">...</span> 👋</h1>
+            <p>Voici ton bilan nutritionnel pour aujourd'hui.</p>
+        </div>
+        <div class="header-weight">
+            <span class="weight-value"><span id="dash-poids">--</span> kg</span>
+            <span class="weight-label">Dernière pesée</span>
+        </div>
+    </header>
+
+    <div class="bento-grid">
+        
+        <div class="card card-calories">
+            <div class="card-title">🔥 Objectif Journalier</div>
+            <div class="progress-container">
+                <div class="progress-bar-bg">
+                    <div id="barre-calories" class="progress-bar-fill"></div>
+                </div>
+                <div id="texte-calories" class="progress-text">Calcul en cours...</div>
+            </div>
+            
+            <div class="macros-grid">
+                <div class="macro-pill prot">
+                    <span class="label">Protéines</span>
+                    <span id="dash-prot" class="value">--g</span>
+                </div>
+                <div class="macro-pill glu">
+                    <span class="label">Glucides</span>
+                    <span id="dash-glu" class="value">--g</span>
+                </div>
+                <div class="macro-pill lip">
+                    <span class="label">Lipides</span>
+                    <span id="dash-lip" class="value">--g</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-chart">
+            <div class="card-title">📈 Tendance Poids (7j)</div>
+            <div class="chart-wrapper">
+                <canvas id="dash-chart"></canvas>
+            </div>
+        </div>
+
+        <div class="card card-water">
+            <div class="card-title">💧 Hydratation</div>
+            <div class="water-wrapper">
+                <div class="water-icon">🚰</div>
+                <div class="water-info">
+                    <span id="dash-eau" class="water-value">-- L</span>
+                    <span class="water-sub">Objectif / jour</span>
+                </div>
+            </div>
+            <p style="font-size: 0.8em; color: #7f8c8d; margin-top: 10px;">Basé sur ton poids actuel.</p>
+        </div>
+
+    </div>
+
+    <h3 class="section-title">🍽️ Au menu ce jour</h3>
+    <div id="dash-repas-container" class="meals-container">
+        <div class="loading-state">Chargement du planning...</div>
+    </div>
+
+</div>
